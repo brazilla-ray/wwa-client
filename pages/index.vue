@@ -1,27 +1,21 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">wwa-client</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+    <div class="level is-mobile">
+      <h1 class="title logo-title">William Whitaker</h1>
+      <img
+        src="~/assets/images/studioShot.jpg"
+        alt="studio shot"
+        class="logo-img"
+      />
     </div>
+    <nav class="menu">
+      <ul class="menu-list">
+        <li><a href="#">artwork</a></li>
+        <li><a href="#">writing</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+    </nav>
   </div>
 </template>
 
@@ -30,34 +24,28 @@ export default {}
 </script>
 
 <style lang="scss">
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.menu {
+  padding-left: 37%;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: $primary;
-  letter-spacing: 1px;
+.menu-list a {
+  color: $link;
+  font-size: 3em;
+  text-decoration: underline;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.title:not(:last-child) {
+  margin-bottom: 0;
 }
 
-.links {
-  padding-top: 15px;
+.logo-title {
+  line-height: 2;
+  align-self: flex-end;
+  padding-left: 0.25em;
+}
+
+.logo-img {
+  width: 53%;
+  padding-bottom: 18px;
 }
 </style>
