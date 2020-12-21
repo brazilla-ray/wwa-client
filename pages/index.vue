@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="level is-mobile">
-      <h1 class="title logo-title">William Whitaker</h1>
+      <h1 class="title logo-title has-text-dark">William Whitaker</h1>
       <img
         src="~/assets/images/studioShot.jpg"
         alt="studio shot"
