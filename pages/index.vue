@@ -10,10 +10,10 @@
     </div>
     <nav class="menu">
       <ul class="menu-list">
-        <li><a href="#">artwork</a></li>
-        <li><a href="#">writing</a></li>
-        <li><a href="#">about</a></li>
-        <li><a href="#">contact</a></li>
+        <li><a href="/artwork">artwork</a></li>
+        <li><a href="/writing">writing</a></li>
+        <li><a href="/about">about</a></li>
+        <li><a href="/contact">contact</a></li>
       </ul>
     </nav>
   </div>
