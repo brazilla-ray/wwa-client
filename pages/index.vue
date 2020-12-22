@@ -9,18 +9,23 @@
       />
     </div>
     <nav class="menu">
-      <ul class="menu-list">
-        <li><a href="/artwork">artwork</a></li>
-        <li><a href="/writing">writing</a></li>
-        <li><a href="/about">about</a></li>
-        <li><a href="/contact">contact</a></li>
+      <ul v-for="page in pages" :key="page.id" class="menu-list">
+        <li v-if="page.name !== 'index'">
+          <a :href="page.path">{{ page.name }}</a>
+        </li>
       </ul>
     </nav>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    pages() {
+      return this.$router.options.routes
+    },
+  },
+}
 </script>
 
 <style lang="scss">
