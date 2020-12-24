@@ -2,10 +2,10 @@
   <aside class="menu">
     <ul class="menu-list">
       <li>
-        <NuxtLink to="/artwork">artwork</NuxtLink>
-        <NuxtLink to="/writing">writing</NuxtLink>
-        <NuxtLink to="/about">about</NuxtLink>
-        <NuxtLink to="/contact">contact</NuxtLink>
+        <NuxtLink to="/artwork" class="pb-5">artwork</NuxtLink>
+        <NuxtLink to="/writing" class="pb-5">writing</NuxtLink>
+        <NuxtLink to="/about" class="pb-5">about</NuxtLink>
+        <NuxtLink to="/contact" class="pb-5">contact</NuxtLink>
       </li>
     </ul>
   </aside>
