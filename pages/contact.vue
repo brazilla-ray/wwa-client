@@ -1,3 +1,5 @@
 <template>
-  <h1>contact</h1>
+  <section class="section">
+    <NuxtLink to="/">home</NuxtLink>
+  </section>
 </template>

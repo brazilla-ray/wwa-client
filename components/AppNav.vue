@@ -1,22 +1,15 @@
 <template>
   <aside class="menu">
-    <ul v-for="page in pages" :key="page.id" class="menu-list">
-      <li v-if="page.name !== 'index'">
-        <a :href="page.path">{{ page.name }}</a>
+    <ul class="menu-list">
+      <li>
+        <NuxtLink to="/artwork">artwork</NuxtLink>
+        <NuxtLink to="/writing">writing</NuxtLink>
+        <NuxtLink to="/about">about</NuxtLink>
+        <NuxtLink to="/contact">contact</NuxtLink>
       </li>
     </ul>
   </aside>
 </template>
-
-<script>
-export default {
-  computed: {
-    pages() {
-      return this.$router.options.routes
-    },
-  },
-}
-</script>
 
 <style lang="scss">
 .menu-list a {
