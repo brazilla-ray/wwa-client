@@ -3,16 +3,16 @@
     <div class="columns is-mobile">
       <div class="column is-half-mobile">
         <app-header />
+        <img
+          src="~/assets/images/studioShot.jpg"
+          alt="studio shot"
+          class="image is-96x96"
+        />
       </div>
       <div class="column">
         <app-nav />
       </div>
     </div>
-    <img
-      src="~/assets/images/studioShot.jpg"
-      alt="studio shot"
-      class="logo-img"
-    />
   </section>
 </template>
 
