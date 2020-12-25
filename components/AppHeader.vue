@@ -1,11 +1,15 @@
 <template>
   <section>
-    <h1 class="title"><a href="/" class="title-link">William Whitaker</a></h1>
-    <img
-      src="~/assets/images/studioShot.jpg"
-      alt="studio shot"
-      class="image is-128x128"
-    />
+    <div
+      class="is-flex is-flex-direction-column is-justify-content-space-between"
+    >
+      <h1 class="title">
+        <a href="/"><span class="title-link">William Whitaker</span></a>
+      </h1>
+      <figure class="image mt-5">
+        <img src="~/assets/images/studioShot.jpg" alt="studio shot" />
+      </figure>
+    </div>
   </section>
 </template>
 
