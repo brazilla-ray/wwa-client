@@ -1,15 +1,17 @@
 <template>
-  <section>
-    <div class="columns is-mobile">
-      <div class="column is-half-mobile">
-        <app-header />
+  <div class="wrapper">
+    <section class="section">
+      <div class="columns is-mobile">
+        <div class="column is-half-mobile">
+          <app-header />
+        </div>
+        <div class="column">
+          <app-nav />
+        </div>
       </div>
-      <div class="column">
-        <app-nav />
-      </div>
-    </div>
+    </section>
     <hero />
-  </section>
+  </div>
 </template>
 
 <script>
