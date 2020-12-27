@@ -24,7 +24,12 @@ export default {
   css: ['bulma', '@/assets/css/main.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
+  plugins: [
+    '~/plugins/posts.server.js',
+    '~/plugins/tags.server.js',
+    '~/plugins/dateformat.js',
+    '~/plugins/artwork.server.js',
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
