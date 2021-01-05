@@ -13,19 +13,17 @@
     <hero />
     <section class="section">
       <div class="artwork">
-        <div v-for="(artwork, index) in recentArtworks" :key="artwork.id">
-          <div :key="index">
-            <figure>
-              <img :src="artwork.acf.image.sizes.large" />
-            </figure>
-          </div>
+        <div v-for="artwork in artworks" :key="artwork.id">
+          <figure>
+            <img :srcset="artwork.image.srcset" />
+            <figcaption>
+              <p>{{ artwork.title }}</p>
+              <p>{{ artwork.date }}</p>
+              <p>{{ artwork.medium }}</p>
+              <p>{{ artwork.dimensions }}</p>
+            </figcaption>
+          </figure>
         </div>
-        <h2>tags</h2>
-        <ul>
-          <li v-for="tag in tags" :key="tag.id">
-            <a>{{ tag.name }}</a>
-          </li>
-        </ul>
       </div>
     </section>
   </div>
@@ -52,10 +50,6 @@ export default {
   computed: {
     artworks() {
       return this.$store.state.artworks
-    },
-    recentArtworks() {
-      if (!this.recentTag) return this.artworks
-      return this.artworks.filter((el) => el.tags.includes(this.recentTag))
     },
     posts() {
       return this.$store.state.posts

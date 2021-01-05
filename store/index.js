@@ -1,4 +1,4 @@
-const siteURL = 'https://williamwhitaker.art'
+const siteURL = 'http://williamwhitaker.local'
 
 export const state = () => ({
   posts: [],
@@ -25,16 +25,19 @@ export const actions = {
 
     try {
       let artworks = await fetch(
-        `${siteURL}/wp-json/wp/v2/wwa_artwork?page=1&per_page=100&_embed=1`
+        `${siteURL}/wp-json/wwap/v1/artwork`
       ).then((res) => res.json())
-      artworks = artworks.map(({ id, slug, title, tags, content, acf }) => ({
-        id,
-        slug,
-        title,
-        tags,
-        content,
-        acf,
-      }))
+      artworks = artworks.map(
+        ({ id, title, medium, dimensions, date, image, tags }) => ({
+          id,
+          title,
+          medium,
+          dimensions,
+          date,
+          image,
+          tags,
+        })
+      )
 
       commit('updateArtworks', artworks)
     } catch (err) {
