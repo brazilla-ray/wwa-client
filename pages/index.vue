@@ -13,7 +13,7 @@
     <hero />
     <section class="section">
       <div class="artwork">
-        <div v-for="artwork in artworks" :key="artwork.id">
+        <div v-for="artwork in recentArtworks" :key="artwork.id">
           <figure>
             <img :srcset="artwork.image.srcset" />
             <figcaption>
@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       selectedTag: null,
-      recentTag: 119,
+      recentTag: 'recent',
       activeClass: 'active',
     }
   },
@@ -51,15 +51,14 @@ export default {
     artworks() {
       return this.$store.state.artworks
     },
+    recentArtworks() {
+      return this.$store.state.recentArtworks
+    },
     posts() {
       return this.$store.state.posts
     },
     tags() {
       return this.$store.state.tags
-    },
-    sortedPosts() {
-      if (!this.selectedTag) return this.posts
-      return this.posts.filter((el) => el.tags.includes(this.selectedTag))
     },
   },
   methods: {

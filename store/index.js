@@ -5,11 +5,15 @@ export const state = () => ({
   blocks: [],
   tags: [],
   artworks: [],
+  recentArtworks: [],
 })
 
 export const mutations = {
   updateArtworks: (state, artworks) => {
     state.artworks = artworks
+  },
+  updateRecent: (state, recentArtworks) => {
+    state.recentArtworks = recentArtworks
   },
   updatePosts: (state, posts) => {
     state.posts = posts
@@ -45,6 +49,31 @@ export const actions = {
     }
   },
 
+  async getRecentArtworks({ state, commit, dispatch }) {
+    if (state.recentArtworks.length) return
+
+    try {
+      let recentArtworks = await fetch(
+        `${siteURL}/wp-json/wwap/v1/artwork/recent`
+      ).then((res) => res.json())
+      recentArtworks = recentArtworks.map(
+        ({ id, title, medium, dimensions, date, image, tags }) => ({
+          id,
+          title,
+          medium,
+          dimensions,
+          date,
+          image,
+          tags,
+        })
+      )
+
+      commit('updateRecent', recentArtworks)
+    } catch (err) {
+      console.log(err)
+    }
+  },
+
   async getPosts({ state, commit, dispatch }) {
     if (state.posts.length) return
 
@@ -69,22 +98,22 @@ export const actions = {
     }
   },
 
-  async getTags({ state, commit }) {
+  async getTags({ state, commit, dispatch }) {
     if (state.tags.length) return
 
-    let allTags = state.artworks.reduce((acc, item) => {
-      return acc.concat(item.tags)
-    }, [])
-    allTags = allTags.join()
+    // let allTags = state.artworks.reduce((acc, item) => {
+    //   return acc.concat(item.tags)
+    // }, [])
+    // allTags = allTags.join()
 
     try {
-      let tags = await fetch(
-        `${siteURL}/wp-json/wp/v2/tags?page=1&per_page=40&include=${allTags}`
-      ).then((res) => res.json())
+      let tags = await fetch(`${siteURL}/wp-json/wwap/v1/artwork`).then((res) =>
+        res.json()
+      )
 
-      tags = tags.map(({ id, name }) => ({
+      tags = tags.map(({ id, tags }) => ({
         id,
-        name,
+        tags,
       }))
 
       commit('updateTags', tags)
