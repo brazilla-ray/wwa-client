@@ -32,43 +32,18 @@ export const actions = {
         `${siteURL}/wp-json/wwap/v1/artwork`
       ).then((res) => res.json())
       artworks = artworks.map(
-        ({ id, title, medium, dimensions, date, image, tags }) => ({
+        ({ id, title, medium, dimensions, date, image, tagSlugs }) => ({
           id,
           title,
           medium,
           dimensions,
           date,
           image,
-          tags,
+          tagSlugs,
         })
       )
 
       commit('updateArtworks', artworks)
-    } catch (err) {
-      console.log(err)
-    }
-  },
-
-  async getRecentArtworks({ state, commit, dispatch }) {
-    if (state.recentArtworks.length) return
-
-    try {
-      let recentArtworks = await fetch(
-        `${siteURL}/wp-json/wwap/v1/artwork/recent`
-      ).then((res) => res.json())
-      recentArtworks = recentArtworks.map(
-        ({ id, title, medium, dimensions, date, image, tags }) => ({
-          id,
-          title,
-          medium,
-          dimensions,
-          date,
-          image,
-          tags,
-        })
-      )
-
-      commit('updateRecent', recentArtworks)
     } catch (err) {
       console.log(err)
     }
