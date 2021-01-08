@@ -53,7 +53,7 @@ export default {
     },
     recentArtworks() {
       if (!this.recentTag) return this.artworks
-      return this.artworks.filter((el) => el.tagSlugs.includes(this.recentTag))
+      return this.artworks.filter((el) => el.tags.includes(this.recentTag))
     },
     posts() {
       return this.$store.state.posts

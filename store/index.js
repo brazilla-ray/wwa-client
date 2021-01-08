@@ -2,18 +2,13 @@ const siteURL = 'http://williamwhitaker.local'
 
 export const state = () => ({
   posts: [],
-  blocks: [],
   tags: [],
   artworks: [],
-  recentArtworks: [],
 })
 
 export const mutations = {
   updateArtworks: (state, artworks) => {
     state.artworks = artworks
-  },
-  updateRecent: (state, recentArtworks) => {
-    state.recentArtworks = recentArtworks
   },
   updatePosts: (state, posts) => {
     state.posts = posts
@@ -32,14 +27,14 @@ export const actions = {
         `${siteURL}/wp-json/wwap/v1/artwork`
       ).then((res) => res.json())
       artworks = artworks.map(
-        ({ id, title, medium, dimensions, date, image, tagSlugs }) => ({
+        ({ id, title, medium, dimensions, date, image, tags }) => ({
           id,
           title,
           medium,
           dimensions,
           date,
           image,
-          tagSlugs,
+          tags,
         })
       )
 
@@ -75,11 +70,6 @@ export const actions = {
 
   async getTags({ state, commit, dispatch }) {
     if (state.tags.length) return
-
-    // let allTags = state.artworks.reduce((acc, item) => {
-    //   return acc.concat(item.tags)
-    // }, [])
-    // allTags = allTags.join()
 
     try {
       let tags = await fetch(`${siteURL}/wp-json/wwap/v1/artwork`).then((res) =>
