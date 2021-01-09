@@ -29,7 +29,6 @@ export default {
     '~/plugins/tags.server.js',
     '~/plugins/dateformat.js',
     '~/plugins/artwork.server.js',
-    '~/plugins/recentArtwork.server.js',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
