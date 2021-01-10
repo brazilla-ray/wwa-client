@@ -12,6 +12,12 @@
             {{ tag }}
           </li>
         </ul>
+        <h2>dimensions:</h2>
+        <ul>
+          <li v-for="tag in dimensionsTags" :key="tag.id">
+            {{ tag }}
+          </li>
+        </ul>
         <div v-for="artwork in artworks" :key="artwork.id">
           <figure>
             <img :srcset="artwork.image.srcset" />
@@ -50,6 +56,10 @@ export default {
       })
       const allTags = [...new Set(tagList.flat())]
       return allTags.sort()
+    },
+    dimensionsTags() {
+      if (!this.sizeTags) return this.allTags
+      return this.allTags.filter((el) => this.sizeTags.includes(el))
     },
   },
 }
