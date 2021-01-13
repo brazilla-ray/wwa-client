@@ -5,21 +5,24 @@
     </section>
     <section class="section">
       <div class="artwork">
-        <div class="tags">
-          <h2>dimensions:</h2>
-          <ul>
+        <div class="level is-mobile">
+          <ul class="tags">
             <li
-              v-for="tag in dimensionsTags"
+              v-for="tag in mediaTags"
               :key="tag.id"
+              :class="[
+                tag === selectedTag
+                  ? 'has-background-link has-text-link-light'
+                  : '',
+              ]"
+              class="tag is-light is-medium is-link"
               @click="updateTag(tag)"
             >
-              <a>{{ tag }}</a>
-            </li>
-          </ul>
-          <h2>types:</h2>
-          <ul>
-            <li v-for="tag in mediaTags" :key="tag.id" @click="updateTag(tag)">
-              <a>{{ tag }}</a>
+              <span>{{ tag }}</span>
+              <button
+                v-if="tag === selectedTag"
+                class="delete is-medium"
+              ></button>
             </li>
           </ul>
         </div>
@@ -49,6 +52,7 @@ export default {
     }
   },
   computed: {
+    // @todo: if selectedTag = painting(e.g), then show dims tags
     artworks() {
       return this.$store.state.artworks
     },
