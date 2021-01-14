@@ -1,8 +1,6 @@
 <template>
   <div class="wrapper">
-    <section class="section">
-      <NuxtLink to="/">home</NuxtLink>
-    </section>
+    <page-header-vue></page-header-vue>
     <section class="section">
       <div class="artwork">
         <div class="level is-mobile">
@@ -43,7 +41,13 @@
 </template>
 
 <script>
+import PageHeaderVue from '~/components/PageHeader.vue'
+
 export default {
+  components: {
+    PageHeaderVue,
+  },
+
   data() {
     return {
       selectedTag: null,
