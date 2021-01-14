@@ -16,7 +16,7 @@
         </a>
       </div>
       <div id="navMenu" class="navbar-menu">
-        <NuxtLink class="navbar-item has-text-link" to="/">home</NuxtLink>
+        <NuxtLink class="navbar-item has-text-link" to="/" exact>home</NuxtLink>
         <NuxtLink class="navbar-item has-text-link" to="/artwork"
           >artwork</NuxtLink
         >
@@ -59,4 +59,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.nuxt-link-active {
+  font-weight: bold;
+}
+</style>
