@@ -1,16 +1,34 @@
 <template>
   <div class="wrapper">
-    <header>
-      <h1>William Whitaker</h1>
-      <nav class="navbar">
-        <ul>
-          <li v-for="route in appRoutes" :key="route.name">
-            <NuxtLink :to="route.path">{{ route.name }}</NuxtLink>
-          </li>
-        </ul>
-        <h2>{{ currentRoute }}</h2>
-      </nav>
-    </header>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <NuxtLink class="navbar-item" to="/">William Whitaker</NuxtLink>
+        <a
+          role="button"
+          class="navbar-burger"
+          data-target="navMenu"
+          aria-label="menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
+      <div id="navMenu" class="navbar-menu">
+        <NuxtLink class="navbar-item has-text-link" to="/">home</NuxtLink>
+        <NuxtLink class="navbar-item has-text-link" to="/artwork"
+          >artwork</NuxtLink
+        >
+        <NuxtLink class="navbar-item has-text-link" to="/writing"
+          >writing</NuxtLink
+        >
+        <NuxtLink class="navbar-item has-text-link" to="/about">about</NuxtLink>
+        <NuxtLink class="navbar-item has-text-link" to="/contact"
+          >contact</NuxtLink
+        >
+      </div>
+    </nav>
   </div>
 </template>
 
@@ -18,21 +36,27 @@
 export default {
   data() {
     return {
-      appRoutes: [],
+      currentRoute: null,
     }
   },
-  computed: {
-    currentRoute() {
-      return this.$route.path
-    },
-  },
-  created() {
-    this.$router.options.routes.forEach((route) => {
-      this.appRoutes.push({
-        name: route.name,
-        path: route.path,
+  mounted() {
+    const $navbarBurgers = Array.prototype.slice.call(
+      document.querySelectorAll('.navbar-burger'),
+      0
+    )
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach((el) => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target
+          const $target = document.getElementById(target)
+
+          el.classList.toggle('is-active')
+          $target.classList.toggle('is-active')
+        })
       })
-    })
+    }
   },
 }
 </script>
+
+<style lang="scss" scoped></style>
