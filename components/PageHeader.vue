@@ -18,11 +18,19 @@
         </a>
       </div>
       <div id="navMenu" class="navbar-menu">
-        <NuxtLink class="navbar-item is-link" to="/">home</NuxtLink>
-        <NuxtLink class="navbar-item" to="/artwork">artwork</NuxtLink>
-        <NuxtLink class="navbar-item" to="/writing">writing</NuxtLink>
-        <NuxtLink class="navbar-item" to="/about">about</NuxtLink>
-        <NuxtLink class="navbar-item" to="/contact">contact</NuxtLink>
+        <NuxtLink class="navbar-item navbar-item-link" to="/">home</NuxtLink>
+        <NuxtLink class="navbar-item navbar-item-link" to="/artwork"
+          >artwork</NuxtLink
+        >
+        <NuxtLink class="navbar-item navbar-item-link" to="/writing"
+          >writing</NuxtLink
+        >
+        <NuxtLink class="navbar-item navbar-item-link" to="/about"
+          >about</NuxtLink
+        >
+        <NuxtLink class="navbar-item navbar-item-link" to="/contact"
+          >contact</NuxtLink
+        >
       </div>
     </nav>
   </div>
@@ -56,6 +64,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.navbar-item-link {
+  color: $link;
+}
 .nuxt-link-exact-active {
   font-weight: bold;
   color: $light;
