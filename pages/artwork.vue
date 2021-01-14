@@ -24,14 +24,14 @@
             </li>
           </ul>
         </div>
-        <div v-for="artwork in sortedArtworks" :key="artwork.id">
-          <figure>
+        <div v-for="artwork in sortedArtworks" :key="artwork.id" class="mb-6">
+          <figure class="image">
             <img :srcset="artwork.image.srcset" />
-            <figcaption>
-              <p>{{ artwork.title }}</p>
-              <p>{{ artwork.date }}</p>
-              <p>{{ artwork.medium }}</p>
-              <p>{{ artwork.dimensions }}</p>
+            <figcaption class="has-text-left pl-4 pt-4">
+              <p class="is-size-6">{{ artwork.title }}</p>
+              <p class="is-size-7">{{ artwork.date }}</p>
+              <p class="is-size-7">{{ artwork.medium }}</p>
+              <p class="is-size-7">{{ artwork.dimensions }}</p>
             </figcaption>
           </figure>
         </div>
