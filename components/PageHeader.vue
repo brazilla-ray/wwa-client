@@ -2,7 +2,9 @@
   <div class="wrapper">
     <nav class="navbar">
       <div class="navbar-brand">
-        <NuxtLink class="navbar-item" to="/">William Whitaker</NuxtLink>
+        <NuxtLink class="navbar-item page-title" to="/"
+          >William Whitaker</NuxtLink
+        >
         <a
           role="button"
           class="navbar-burger"
@@ -16,17 +18,11 @@
         </a>
       </div>
       <div id="navMenu" class="navbar-menu">
-        <NuxtLink class="navbar-item has-text-link" to="/" exact>home</NuxtLink>
-        <NuxtLink class="navbar-item has-text-link" to="/artwork"
-          >artwork</NuxtLink
-        >
-        <NuxtLink class="navbar-item has-text-link" to="/writing"
-          >writing</NuxtLink
-        >
-        <NuxtLink class="navbar-item has-text-link" to="/about">about</NuxtLink>
-        <NuxtLink class="navbar-item has-text-link" to="/contact"
-          >contact</NuxtLink
-        >
+        <NuxtLink class="navbar-item is-link" to="/">home</NuxtLink>
+        <NuxtLink class="navbar-item" to="/artwork">artwork</NuxtLink>
+        <NuxtLink class="navbar-item" to="/writing">writing</NuxtLink>
+        <NuxtLink class="navbar-item" to="/about">about</NuxtLink>
+        <NuxtLink class="navbar-item" to="/contact">contact</NuxtLink>
       </div>
     </nav>
   </div>
@@ -60,7 +56,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.nuxt-link-active {
+.nuxt-link-exact-active {
   font-weight: bold;
+  color: $light;
 }
 </style>
