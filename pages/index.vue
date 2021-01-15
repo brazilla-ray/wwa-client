@@ -10,7 +10,7 @@
         </div>
       </div>
     </section>
-    <hero />
+    <hero hero-title="recent work" />
     <section class="section">
       <div class="artwork">
         <div v-for="artwork in recentArtworks" :key="artwork.id">
