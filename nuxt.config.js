@@ -21,12 +21,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    'normalize.css',
-    'bulma',
-    '@fortawesome/fontawesome-free',
-    '@/assets/css/main.scss',
-  ],
+  css: ['normalize.css', 'bulma', '@/assets/css/main.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
@@ -45,6 +40,7 @@ export default {
     '@nuxtjs/eslint-module',
     // insert the project URL here
     '@nuxtjs/style-resources',
+    '@nuxtjs/fontawesome',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -64,6 +60,13 @@ export default {
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
+
+  fontawesome: {
+    icons: {
+      solid: true,
+      brands: true,
+    },
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
