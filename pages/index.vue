@@ -55,20 +55,8 @@ export default {
       if (!this.recentTag) return this.artworks
       return this.artworks.filter((el) => el.tags.includes(this.recentTag))
     },
-    posts() {
-      return this.$store.state.posts
-    },
     tags() {
       return this.$store.state.tags
-    },
-  },
-  methods: {
-    updateTag(tag) {
-      if (!this.selectedTag) {
-        this.selectedTag = tag.id
-      } else {
-        this.selectedTag = null
-      }
     },
   },
 }
