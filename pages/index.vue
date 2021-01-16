@@ -13,7 +13,7 @@
     <hero hero-title="recent work" />
     <section class="section">
       <div class="artwork">
-        <artwork></artwork>
+        <gallery-vue></gallery-vue>
       </div>
     </section>
   </div>
@@ -23,12 +23,12 @@
 import AppHeader from '~/components/AppHeader.vue'
 import AppNav from '~/components/AppNav.vue'
 import Hero from '~/components/Hero.vue'
-import Artwork from '~/components/Artwork.vue'
+import GalleryVue from '~/components/Gallery.vue'
 
 export default {
   components: {
     AppHeader,
-    Artwork,
+    GalleryVue,
     AppNav,
     Hero,
   },

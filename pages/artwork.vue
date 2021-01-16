@@ -24,7 +24,7 @@
             </li>
           </ul>
         </div>
-        <artwork></artwork>
+        <gallery-vue></gallery-vue>
       </div>
     </section>
   </div>
@@ -32,11 +32,11 @@
 
 <script>
 import PageHeaderVue from '~/components/PageHeader.vue'
-import Artwork from '~/components/Artwork.vue'
+import GalleryVue from '~/components/Gallery.vue'
 
 export default {
   components: {
-    Artwork,
+    GalleryVue,
     PageHeaderVue,
   },
 
