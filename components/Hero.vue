@@ -2,8 +2,8 @@
   <section class="hero is-light">
     <div class="hero-body">
       <span class="icon-text">
-        <span>{{ heroTitle }}</span>
-        <span class="icon">
+        <span class="is-size-3">{{ heroTitle }}</span>
+        <span class="icon is-large">
           <font-awesome-icon :icon="['fas', 'arrow-circle-down']" />
         </span>
       </span>
