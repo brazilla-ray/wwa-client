@@ -1,6 +1,10 @@
 <template>
   <div class="mb-6">
-    <figure v-for="artwork in sortedArtworks" :key="artwork.id" class="image">
+    <figure
+      v-for="artwork in sortedArtworks"
+      :key="artwork.id"
+      class="image mb-6"
+    >
       <img :srcset="artwork.image.srcset" />
       <figcaption class="has-text-left pl-4 pt-4">
         <p class="is-size-6">{{ artwork.title }}</p>
