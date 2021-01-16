@@ -24,7 +24,7 @@
             </li>
           </ul>
         </div>
-        <gallery-vue></gallery-vue>
+        <gallery-vue :selected-tag="selectedTag"></gallery-vue>
       </div>
     </section>
   </div>

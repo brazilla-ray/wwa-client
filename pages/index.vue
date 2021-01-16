@@ -13,7 +13,7 @@
     <hero hero-title="recent work" />
     <section class="section">
       <div class="artwork">
-        <gallery-vue></gallery-vue>
+        <gallery-vue :selected-tag="selectedTag"></gallery-vue>
       </div>
     </section>
   </div>
@@ -34,22 +34,8 @@ export default {
   },
   data() {
     return {
-      selectedTag: null,
-      recentTag: 'recent',
-      activeClass: 'active',
+      selectedTag: 'recent',
     }
-  },
-  computed: {
-    artworks() {
-      return this.$store.state.artworks
-    },
-    recentArtworks() {
-      if (!this.recentTag) return this.artworks
-      return this.artworks.filter((el) => el.tags.includes(this.recentTag))
-    },
-    tags() {
-      return this.$store.state.tags
-    },
   },
 }
 </script>

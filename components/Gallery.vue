@@ -18,10 +18,11 @@
 
 <script>
 export default {
-  data() {
-    return {
-      selectedTag: null,
-    }
+  props: {
+    selectedTag: {
+      type: String,
+      default: null,
+    },
   },
   computed: {
     artworks() {
