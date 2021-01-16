@@ -24,17 +24,7 @@
             </li>
           </ul>
         </div>
-        <div v-for="artwork in sortedArtworks" :key="artwork.id" class="mb-6">
-          <figure class="image">
-            <img :srcset="artwork.image.srcset" />
-            <figcaption class="has-text-left pl-4 pt-4">
-              <p class="is-size-6">{{ artwork.title }}</p>
-              <p class="is-size-7">{{ artwork.date }}</p>
-              <p class="is-size-7">{{ artwork.medium }}</p>
-              <p class="is-size-7">{{ artwork.dimensions }}</p>
-            </figcaption>
-          </figure>
-        </div>
+        <artwork></artwork>
       </div>
     </section>
   </div>
@@ -42,9 +32,11 @@
 
 <script>
 import PageHeaderVue from '~/components/PageHeader.vue'
+import Artwork from '~/components/Artwork.vue'
 
 export default {
   components: {
+    Artwork,
     PageHeaderVue,
   },
 

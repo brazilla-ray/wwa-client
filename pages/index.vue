@@ -13,17 +13,7 @@
     <hero hero-title="recent work" />
     <section class="section">
       <div class="artwork">
-        <div v-for="artwork in recentArtworks" :key="artwork.id">
-          <figure>
-            <img :srcset="artwork.image.srcset" />
-            <figcaption>
-              <p>{{ artwork.title }}</p>
-              <p>{{ artwork.date }}</p>
-              <p>{{ artwork.medium }}</p>
-              <p>{{ artwork.dimensions }}</p>
-            </figcaption>
-          </figure>
-        </div>
+        <artwork></artwork>
       </div>
     </section>
   </div>
@@ -33,10 +23,12 @@
 import AppHeader from '~/components/AppHeader.vue'
 import AppNav from '~/components/AppNav.vue'
 import Hero from '~/components/Hero.vue'
+import Artwork from '~/components/Artwork.vue'
 
 export default {
   components: {
     AppHeader,
+    Artwork,
     AppNav,
     Hero,
   },
