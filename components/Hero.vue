@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-light">
+  <section class="hero is-dark is-bold">
     <div class="hero-body">
       <span class="icon-text">
         <span class="is-size-3">{{ heroTitle }}</span>
