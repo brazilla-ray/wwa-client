@@ -1,8 +1,10 @@
 <template>
   <div class="wrapper">
-    <page-header-vue></page-header-vue>
+    <page-header-vue class="mb-6"></page-header-vue>
+    <hero-vue hero-title="artwork"></hero-vue>
     <section class="section">
       <div class="artwork">
+        <h2 class="mb-2">Type:</h2>
         <div class="level is-mobile">
           <ul class="tags">
             <li
@@ -33,10 +35,12 @@
 <script>
 import PageHeaderVue from '~/components/PageHeader.vue'
 import GalleryVue from '~/components/Gallery.vue'
+import HeroVue from '~/components/Hero.vue'
 
 export default {
   components: {
     GalleryVue,
+    HeroVue,
     PageHeaderVue,
   },
 
