@@ -4,7 +4,6 @@
     <hero-vue hero-title="artwork"></hero-vue>
     <section class="section">
       <div class="artwork">
-        <h2 class="mb-2">Type:</h2>
         <artwork-tags-vue></artwork-tags-vue>
         <div class="level is-mobile">
           <ul class="tags">
