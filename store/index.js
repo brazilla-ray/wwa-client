@@ -72,13 +72,13 @@ export const actions = {
     if (state.tags.length) return
 
     try {
-      let tags = await fetch(`${siteURL}/wp-json/wwap/v1/artwork`).then((res) =>
-        res.json()
-      )
+      let tags = await fetch(
+        `${siteURL}/wp-json/wwap/v1/artwork/tags`
+      ).then((res) => res.json())
 
-      tags = tags.map(({ id, tags }) => ({
+      tags = tags.map(({ id, slug }) => ({
         id,
-        tags,
+        slug,
       }))
 
       commit('updateTags', tags)

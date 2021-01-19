@@ -5,6 +5,7 @@
     <section class="section">
       <div class="artwork">
         <h2 class="mb-2">Type:</h2>
+        <artwork-tags-vue></artwork-tags-vue>
         <div class="level is-mobile">
           <ul class="tags">
             <li
@@ -36,12 +37,14 @@
 import PageHeaderVue from '~/components/PageHeader.vue'
 import GalleryVue from '~/components/Gallery.vue'
 import HeroVue from '~/components/Hero.vue'
+import ArtworkTagsVue from '~/components/ArtworkTags.vue'
 
 export default {
   components: {
     GalleryVue,
     HeroVue,
     PageHeaderVue,
+    ArtworkTagsVue,
   },
 
   data() {
