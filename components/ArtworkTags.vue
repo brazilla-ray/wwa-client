@@ -21,7 +21,6 @@
 export default {
   data() {
     return {
-      selectedTag: null,
       typeTags: ['painting', 'drawing', 'collage'],
     }
   },
@@ -32,14 +31,14 @@ export default {
     mediaTypes() {
       return this.tags.filter((el) => this.typeTags.includes(el.slug)).reverse()
     },
+    selectedTag() {
+      // return console.log(this.$store.state.selected)
+      return this.$store.state.selected
+    },
   },
   methods: {
     updateTag(tag) {
-      if (!this.selectedTag) {
-        this.selectedTag = tag
-      } else {
-        this.selectedTag = null
-      }
+      return this.$store.commit('updateSelected', tag)
     },
   },
 }

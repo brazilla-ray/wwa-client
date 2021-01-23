@@ -4,7 +4,22 @@ export const state = () => ({
   posts: [],
   tags: [],
   artworks: [],
+  selected: [],
 })
+
+export const getters = {
+  sortedArtworks: (state) => {
+    return state.artworks.map((el) => {
+      return {
+        ...el,
+        tags: [...el.tags.map((el) => [el.slug]).flat()],
+      }
+    })
+  },
+  selectedTag: (state) => {
+    return state.selected
+  },
+}
 
 export const mutations = {
   updateArtworks: (state, artworks) => {
@@ -16,6 +31,9 @@ export const mutations = {
   updateTags: (state, tags) => {
     state.tags = tags
   },
+  updateSelected: (state, selected) => {
+    state.selected = selected
+  },
 }
 
 export const actions = {
@@ -26,7 +44,7 @@ export const actions = {
       let artworks = await fetch(
         `${siteURL}/wp-json/wwap/v1/artwork`
       ).then((res) => res.json())
-      artworks = artworks.map(
+      artworks = artworks.flatMap(
         ({ id, title, medium, dimensions, date, image, tags }) => ({
           id,
           title,

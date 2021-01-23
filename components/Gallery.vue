@@ -18,22 +18,17 @@
 
 <script>
 export default {
-  props: {
-    selectedTag: {
-      type: String,
-      default: null,
-    },
-  },
   computed: {
     artworks() {
       return this.$store.state.artworks
     },
     sortedArtworks() {
-      if (!this.selectedTag) return this.artworks
-      return this.artworks.filter((el) => el.tags.includes(this.selectedTag))
+      return this.$store.getters.sortedArtworks.filter((el) =>
+        el.tags.includes(this.selectedTag.slug)
+      )
     },
-    tags() {
-      return this.$store.state.tags
+    selectedTag() {
+      return this.$store.state.selected
     },
   },
 }
