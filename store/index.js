@@ -1,13 +1,20 @@
+// Source and inspiration:
+// https://www.smashingmagazine.com/2020/02/headless-wordpress-site-jamstack/
 const siteURL = 'http://williamwhitaker.local'
 
 export const state = () => ({
+  // Collections of all:
   posts: [],
   tags: [],
   artworks: [],
+  // and the currently selected tag on the 'artworks' page.
   selected: [],
 })
 
 export const getters = {
+  // Returns a flattened array of 'artworks' objects.
+  // @todo- rename to better reflect what it does.
+  // source: https://stackoverflow.com/a/53115809/4699931
   sortedArtworks: (state) => {
     return state.artworks.map((el) => {
       return {
@@ -16,6 +23,7 @@ export const getters = {
       }
     })
   },
+  // Returns the currently selected tag on the 'artworks' page, and adds it to the state above.
   selectedTag: (state) => {
     if (state.selected.length < 1) return 'all'
     return state.selected
@@ -23,6 +31,7 @@ export const getters = {
 }
 
 export const mutations = {
+  // Functions to alter the state of items in the application store.
   updateArtworks: (state, artworks) => {
     state.artworks = artworks
   },
@@ -38,6 +47,7 @@ export const mutations = {
 }
 
 export const actions = {
+  // Functions to fetch data from wordpress.
   async getArtworks({ state, commit, dispatch }) {
     if (state.artworks.length) return
 
@@ -45,7 +55,7 @@ export const actions = {
       let artworks = await fetch(
         `${siteURL}/wp-json/wwap/v1/artwork`
       ).then((res) => res.json())
-      artworks = artworks.flatMap(
+      artworks = artworks.map(
         ({ id, title, medium, dimensions, date, image, tags }) => ({
           id,
           title,
@@ -59,6 +69,7 @@ export const actions = {
 
       commit('updateArtworks', artworks)
     } catch (err) {
+      // @todo: replace console.log
       console.log(err)
     }
   },
@@ -83,6 +94,7 @@ export const actions = {
 
       commit('updatePosts', posts)
     } catch (err) {
+      // @todo: replace console.log
       console.log(err)
     }
   },
@@ -102,6 +114,7 @@ export const actions = {
 
       commit('updateTags', tags)
     } catch (err) {
+      // @todo: replace console.log
       console.log(err)
     }
   },
