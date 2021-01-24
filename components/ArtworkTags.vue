@@ -1,6 +1,5 @@
 <template>
   <div class="mb-6">
-    <h2 class="mb-2">Type:</h2>
     <ul class="tags">
       <li
         :class="[
