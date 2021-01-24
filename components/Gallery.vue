@@ -23,14 +23,13 @@ export default {
       return this.$store.state.artworks
     },
     sortedArtworks() {
-      if (!this.selectedTag || this.selectedTag === 'all')
-        return this.$store.state.artworks
+      if (this.selectedTag === 'all') return this.artworks
       return this.$store.getters.sortedArtworks.filter((el) =>
         el.tags.includes(this.selectedTag.slug)
       )
     },
     selectedTag() {
-      return this.$store.state.selected
+      return this.$store.getters.selectedTag
     },
   },
 }

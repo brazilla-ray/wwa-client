@@ -43,7 +43,7 @@ export default {
       return this.tags.filter((el) => this.typeTags.includes(el.slug)).reverse()
     },
     selectedTag() {
-      return this.$store.state.selected
+      return this.$store.getters.selectedTag
     },
   },
   methods: {

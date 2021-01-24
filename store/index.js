@@ -17,6 +17,7 @@ export const getters = {
     })
   },
   selectedTag: (state) => {
+    if (state.selected.length < 1) return 'all'
     return state.selected
   },
 }
