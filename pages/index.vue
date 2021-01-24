@@ -13,7 +13,7 @@
     <hero hero-title="recent work" />
     <section class="section">
       <div class="artwork">
-        <gallery-vue :selected-tag="selectedTag"></gallery-vue>
+        <gallery-vue></gallery-vue>
       </div>
     </section>
   </div>

@@ -23,6 +23,8 @@ export default {
       return this.$store.state.artworks
     },
     sortedArtworks() {
+      if (!this.selectedTag || this.selectedTag === 'all')
+        return this.$store.state.artworks
       return this.$store.getters.sortedArtworks.filter((el) =>
         el.tags.includes(this.selectedTag.slug)
       )

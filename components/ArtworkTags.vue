@@ -1,7 +1,18 @@
 <template>
-  <div>
+  <div class="mb-6">
     <h2 class="mb-2">Type:</h2>
     <ul class="tags">
+      <li
+        :class="[
+          selectedTag === 'all'
+            ? 'has-background-link has-text-link-light'
+            : '',
+        ]"
+        class="tag is-light is-medium is-link"
+        @click="updateTag('all')"
+      >
+        all
+      </li>
       <li
         v-for="tag in mediaTypes"
         :key="tag.id"
@@ -32,7 +43,6 @@ export default {
       return this.tags.filter((el) => this.typeTags.includes(el.slug)).reverse()
     },
     selectedTag() {
-      // return console.log(this.$store.state.selected)
       return this.$store.state.selected
     },
   },
