@@ -1,23 +1,54 @@
-/** @todo put these in the right place */
-// Source and inspiration:
-// https://www.smashingmagazine.com/2020/02/headless-wordpress-site-jamstack/
+/**
+ * Source and inspiration:
+ * {@link https://www.smashingmagazine.com/2020/02/headless-wordpress-site-jamstack/}
+ * @namespace store
+ * @type {Object}
+ */
+
+/**
+ * Sets the base URL, i.e the WordPress instance.
+ */
 const siteURL = 'http://williamwhitaker.local'
 
+/**
+ * The global source of truth.
+ * @type {Object}
+ */
+
 export const state = () => ({
-  // Collections of all:
+  /**
+   * Collection of all posts.
+   */
   posts: [],
+  /**
+   * Collection of all tags.
+   */
   tags: [],
+  /**
+   * Collection of all posts of type 'artworks'.
+   */
   artworks: [],
-  // and the currently selected tag on the 'artworks' page.
+  /**
+   * The currently selected tag on the 'artworks' page.
+   */
   selected: [],
 })
 /**
- * Returns a flattened array of 'artworks' objects.
- * source and inspiration: https://stackoverflow.com/a/53115809/4699931
- * @todo rename to better reflect what it does.
+ * Functions to filter data.
+ * @type {Object}
  */
 export const getters = {
+  /**
+   * Returns a flattened array of 'artworks' objects.
+   * source and inspiration: {@link https://stackoverflow.com/a/53115809/4699931}
+   * @param {Object} state - reference to the global state
+   * @todo rename to better reflect what it does.
+   */
   sortedArtworks: (state) => {
+    /**
+     * @function artworksMap
+     * @param {Object} el - individual post from array of artworks
+     */
     return state.artworks.map((el) => {
       return {
         ...el,
@@ -25,15 +56,20 @@ export const getters = {
       }
     })
   },
-  // Returns the currently selected tag on the 'artworks' page, and adds it to the state above.
+  /**
+   * Returns the currently selected tag on the 'artworks' page, and adds it to the state above.
+   * @function selectedTag
+   * @param {Object} state - reference to the global state
+   */
   selectedTag: (state) => {
     if (state.selected.length < 1) return 'all'
     return state.selected
   },
 }
-
+/**
+ * Functions to alter the state of items in the application store.
+ */
 export const mutations = {
-  // Functions to alter the state of items in the application store.
   updateArtworks: (state, artworks) => {
     state.artworks = artworks
   },
@@ -47,9 +83,10 @@ export const mutations = {
     state.selected = selected
   },
 }
-
+/**
+ * Functions to fetch data from wordpress.
+ */
 export const actions = {
-  // Functions to fetch data from wordpress.
   async getArtworks({ state, commit, dispatch }) {
     if (state.artworks.length) return
 
@@ -71,7 +108,7 @@ export const actions = {
 
       commit('updateArtworks', artworks)
     } catch (err) {
-      /** @todo: replace console.log */
+      /** @todo replace console.log */
       console.log(err)
     }
   },
@@ -96,7 +133,7 @@ export const actions = {
 
       commit('updatePosts', posts)
     } catch (err) {
-      /** @todo: replace console.log */
+      /** @todo replace console.log */
       console.log(err)
     }
   },
@@ -116,7 +153,7 @@ export const actions = {
 
       commit('updateTags', tags)
     } catch (err) {
-      /** @todo: replace console.log */
+      /** @todo replace console.log */
       console.log(err)
     }
   },
