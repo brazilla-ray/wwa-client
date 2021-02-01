@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper mb-4">
     <nav class="navbar">
       <div class="navbar-brand">
         <NuxtLink class="navbar-item page-title" to="/"
