@@ -12,7 +12,7 @@
               }}</a>
             </h3>
             <div class="post_body">
-              <div v-html="post.content.rendered"></div>
+              <div v-html="post.excerpt.rendered"></div>
             </div>
             <a :href="`blog/${post.slug}`" class="is-uppercase is-size-7"
               >Read more...</a

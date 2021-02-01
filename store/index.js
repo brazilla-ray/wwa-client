@@ -121,15 +121,18 @@ export const actions = {
         res.json()
       )
 
-      posts = posts.map(({ id, slug, title, date, guid, content, blocks }) => ({
-        id,
-        slug,
-        title,
-        date,
-        guid,
-        content,
-        blocks,
-      }))
+      posts = posts.map(
+        ({ id, slug, title, date, guid, excerpt, content, blocks }) => ({
+          id,
+          slug,
+          title,
+          date,
+          guid,
+          excerpt,
+          content,
+          blocks,
+        })
+      )
 
       commit('updatePosts', posts)
     } catch (err) {
