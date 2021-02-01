@@ -1,12 +1,7 @@
 <template>
-  <section class="hero is-dark is-bold">
+  <section class="hero is-light is-bold">
     <div class="hero-body">
-      <span class="icon-text">
-        <span class="is-size-3">{{ heroTitle }}</span>
-        <span class="icon is-large">
-          <font-awesome-icon :icon="['fas', 'arrow-circle-down']" />
-        </span>
-      </span>
+      <span class="is-size-3">{{ heroTitle }}</span>
     </div>
   </section>
 </template>
