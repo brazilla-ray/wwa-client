@@ -2,6 +2,7 @@
   <div class="wrapper">
     <page-header-vue></page-header-vue>
     <hero-vue hero-title="about"></hero-vue>
+    <nuxt-content :document="statement" />
   </div>
 </template>
 
@@ -12,6 +13,13 @@ export default {
   components: {
     PageHeaderVue,
     HeroVue,
+  },
+  async asyncData({ $content }) {
+    const statement = await $content('statement').fetch()
+
+    return {
+      statement,
+    }
   },
 }
 </script>

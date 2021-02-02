@@ -1,0 +1,3 @@
+STATEMENT  
+
+I use repetition as a way of emphasizing that whatever separates us, we share at least one thing in common—a body. The marks I make with my hands are gestures repeated as you look at them with your eyes. We are engaged in different aspects of the same activity. The mark becomes the focal point of a shared experience, which in turn becomes a source of meaning. My paintings may resemble a code or language of some kind, but there is no message to decipher. This is not meant to frustrate you, but to remind you that we are equals. We are both involved in the creation of meaning, and ultimately, we are both authors of the work.  
