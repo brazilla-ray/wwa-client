@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
     <page-header-vue></page-header-vue>
+    <hero-vue :hero-title="post.title.rendered"></hero-vue>
     <main class="section">
-      <h1 class="is-size-4 mb-4">{{ post.title.rendered }}</h1>
       <section class="post_body" v-html="post.content.rendered"></section>
     </main>
   </div>
@@ -10,9 +10,10 @@
 
 <script>
 import PageHeaderVue from '~/components/PageHeader.vue'
+import HeroVue from '~/components/Hero.vue'
 
 export default {
-  components: { PageHeaderVue },
+  components: { PageHeaderVue, HeroVue },
   data() {
     return {
       slug: this.$route.params.slug,
