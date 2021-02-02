@@ -1,4 +1,4 @@
-SOLO EXHIBITIONS  
+**SOLO EXHIBITIONS**  
 
 ---  
 
@@ -13,7 +13,7 @@ SOLO EXHIBITIONS
 
 <br>
 
-SELECTED GROUP EXHIBITIONS   
+**SELECTED GROUP EXHIBITIONS**   
   
 ---  
 
@@ -52,7 +52,7 @@ curated by Gerald Ross, Maryland Institute College of Art
 
 </div>
 
-PROFESSIONAL ACTIVITIES / AWARDS  
+**PROFESSIONAL ACTIVITIES / AWARDS**  
 
 ---
 
@@ -77,7 +77,7 @@ Semi-Finalist, *Trawick Prize*, Bethesda Urban Partnership
 
 </div>
 
-EDUCATION  
+**EDUCATION**  
 
 ---
 
