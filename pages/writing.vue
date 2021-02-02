@@ -7,7 +7,7 @@
         <main>
           <div v-for="post in posts" :key="post.id" class="post">
             <h3 class="mb-4">
-              <a :href="`${post.slug}`" class="is-size-4">{{
+              <a :href="`blog/${post.slug}`" class="is-size-4">{{
                 post.title.rendered
               }}</a>
             </h3>
