@@ -1,7 +1,7 @@
 import axios from 'axios'
 const dynamicRoutes = () => {
   return axios
-    .get('http://williamwhitaker.local/wp-json/wp/v2/posts?page=1&per_page=20')
+    .get('https://williamwhitaker.art/wp-json/wp/v2/posts?page=1&per_page=20')
     .then((res) => {
       return res.data.map((post) => `/blog/${post.slug}`)
     })

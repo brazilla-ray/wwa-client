@@ -8,7 +8,7 @@
 /**
  * Sets the base URL, i.e the WordPress instance.
  */
-const siteURL = 'http://williamwhitaker.local'
+const siteURL = 'https://williamwhitaker.art'
 
 /**
  * The global source of truth.
